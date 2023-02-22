@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisible Sum Pairs</title>
+</head>
+<body>
+    <script>
+    function divisibleSumPairs(n, k, ar) {
+        let divisions = 0;
+        let count = 0;
+        while(count < ar.length){
+            for(let i = count, j = i+1; j < ar.length; j++){
+                if(i < j && ((ar[i] + ar[j]) % k == 0)){
+                    divisions++;
+                }
+            }
+            count++;
+        }
+        return divisions;
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migratory Birds</title>
+</head>
+<body>
+    <script>
+    function migratoryBirds(arr) {
+        let ids = [0,0,0,0,0]
+        for(let i = 0; i < arr.length; i++){
+            ids[arr[i]-1]++;
+        }
+        
+        let lowest = 0;
+        let frequency = 0;
+        for(let i = 0; i < ids.length; i++){
+            if(frequency < ids[i]){
+                frequency = ids[i];
+                lowest = i;
+            }
+        }
+
+        return lowest+1;
+    }
+
+    console.log(migratoryBirds([1,4,4,4,5,3]));
+    </script>
+</body>
+</html>

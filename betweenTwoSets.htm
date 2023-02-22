@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Between two sets</title>
+</head>
+<body>
+    <script>
+        function getTotalX(a, b) {
+            let num_max = 0;
+            for(let i = 0; i < b.length; i++){
+                if(num_max < b[i]){
+                    num_max = b[i];
+                }
+            }
+
+            let integers_a = [];
+            let i = 1;
+            let isFactor = false;
+            while(i <= num_max){
+                for(let j = 0; j < a.length; j++){
+                    if(i % a[j] == 0){
+                        isFactor = true;
+                    } else{
+                        isFactor = false;
+                        break;
+                    }
+                }
+                if(isFactor == true){
+                    integers_a.push(i);
+                }
+                i++;
+            }
+
+            let integers_final = [];
+            isFactor = false;
+            for(let i = 0; i < integers_a.length; i++){
+                for(let j = 0; j < b.length; j++){
+                    if((b[j] % integers_a[i]) == 0){
+                        isFactor = true;
+                    } else{
+                        isFactor = false;
+                        j = b.length + 1;
+                    }
+                }
+                if(isFactor == true){
+                    integers_final.push(integers_a[i]);
+                }
+                isFactor = false;
+            }
+            console.log(integers_final);
+            return integers_final.length;
+}
+    let a = [1];
+    let b = [100];
+    
+    console.log(getTotalX(a,b));
+    </script>
+</body>
+</html>

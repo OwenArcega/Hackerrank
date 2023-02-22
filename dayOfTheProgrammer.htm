@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day of the Programmer</title>
+</head>
+<body>
+    <script>
+    function dayOfProgrammer(year) {
+        let string = "";
+        if(year < 1918){
+            if(year % 4 == 0){
+                return "12.09." + year;
+            } else{
+                return "13.09." + year;
+            }
+        } else if(year == 1918){
+            return "27.09." + year;
+        } else{
+            if((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)){
+                return "12.09." + year;
+            } else{
+                return "13.09." + year;
+            }
+        }
+    }
+
+    console.log(dayOfProgrammer(2000));
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kangaroo</title>
+</head>
+<body>
+    <script>
+        //Owen Arcega
+    function kangaroo(x1, v1, x2, v2) {
+        if(x1 >= x2 && v1 >= v2){
+            return "NO";
+        }
+
+        if(x2 >= x1 && v2 >= v1){
+            return "NO";
+        }
+
+        if((x1 - x2) % (v2 - v1) == 0){
+            return "YES";
+        } else{
+            return "NO";
+        }
+    }
+    </script>
+</body>
+</html>

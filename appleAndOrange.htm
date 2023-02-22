@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple and Orange</title>
+</head>
+<body>
+    <script>
+        //Owen Arcega
+        function countApplesAndOranges(s, t, a, b, apples, oranges) {
+            
+            //Obtains the distances of the fruits from their respective tree's distance
+            let appleDistances = [];
+            for(let i = 0; i < apples.length; i++){
+                appleDistances.push(apples[i] + a);
+            }
+
+            let orangeDistances = [];
+            for(let i = 0; i < oranges.length; i++){
+                orangeDistances.push(oranges[i] + b);
+            }
+
+            //Checks how many apples and oranges landed on the house
+            let applesLanded = 0;
+            for(let i = 0; i < appleDistances.length; i++){
+                if(appleDistances[i] >= s && appleDistances[i] <= t){
+                    applesLanded++;
+                }
+            }
+
+            let orangesLanded = 0;
+            for(let i = 0; i < orangeDistances.length; i++){
+                if(orangeDistances[i] >= s && orangeDistances[i] <= t){
+                    orangesLanded++;
+                }
+            }
+
+            console.log(applesLanded + "\n" + orangesLanded);
+    }
+    </script>
+</body>
+</html>

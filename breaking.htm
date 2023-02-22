@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Best and Worst Records</title>
+</head>
+<body>
+    <script>
+        function breakingRecords(scores) {
+            let BestAndWorst = [];
+            let better = 0;
+            let worse = 0;
+            for(let i = 0; i < scores.length; i++){
+                if(BestAndWorst.length == 0){
+                    BestAndWorst.push(scores[i]);
+                    BestAndWorst.push(scores[i]);
+                } else{
+                    if(scores[i] > BestAndWorst[0]){
+                        better++;
+                        BestAndWorst[0] = scores[i];
+                    } else if(scores[i] < BestAndWorst[1]){
+                        worse++;
+                        BestAndWorst[1] = scores[i];
+                    }
+                }
+            }
+
+            return [better,worse];
+        }
+
+        console.log(breakingRecords([10,5,20,20,4,5,2,25,   1]))
+    </script>
+</body>
+</html>

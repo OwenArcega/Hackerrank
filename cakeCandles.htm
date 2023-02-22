@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cake Candles</title>
+</head>
+<body>
+    <script>
+        function birthdayCakeCandles(candles) {
+            let tallest = 0;
+            let tallestPrev = 0;
+            for(let i = 0; i < candles.length; i++){
+                for(let j = i; j < candles.length; j++){
+                    if(candles[i] == candles[j]){
+                        tallestPrev++;
+                    }
+                }
+                if(tallestPrev > tallest){
+                    tallest = tallestPrev;
+                }
+                tallestPrev = 0;
+            }
+            console.log(tallest);
+    }
+
+    birthdayCakeCandles([2,2,2,3,5,5,5,5,5,5,5]);
+    </script>
+</body>
+</html>

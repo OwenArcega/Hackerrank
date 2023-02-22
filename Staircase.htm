@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staircase</title>
+</head>
+<body>
+    <script>
+        function Staircase(n){
+            let string = "";
+            for(let k = 1; k <= n; k++){
+                for(let j = n-k; j > 0; j--){
+                string += " ";
+            }   for(let i = 1; i <= k; i++){
+                string += "#";
+            }
+                string += "\n";
+            }
+            console.log(string);
+        }
+
+        Staircase(6);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading</title>
+</head>
+<body>
+    <script>
+        function gradingStudents(grades) {
+            let finalGrades = [];
+            let round = 0;
+            for(let i = 0; i < grades.length; i++){
+                if((-1*((grades[i]%5)-5)) < 3){
+                    round = grades[i] + (-1*((grades[i]%5)-5));
+                    if(round >= 40){
+                        finalGrades.push(grades[i] + (-1*((grades[i]%5)-5)));
+                    } else{
+                        finalGrades.push(grades[i]);
+                    }
+                } else {
+                    finalGrades.push(grades[i]);
+                }
+            }
+            return finalGrades;
+    }
+
+    console.log(gradingStudents([73,67,38,33]));
+    </script>
+</body>
+</html>

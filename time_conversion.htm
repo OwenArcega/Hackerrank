@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Conversion</title>
+</head>
+<body>
+    <script>
+        function timeConversion(s) {
+            let evening = false;
+            for(let i = 0; i < s.length; i++){
+                if(s[i] == "P"){
+                    evening = true;
+                }
+            }
+            let time = "";
+            if(evening){
+                if(s[1] == "2" && s[0] == "1"){
+                    time += s[0];
+                    time += s[1];
+                } else{
+                    time += String(Number(s[0]) + 1);
+                    time += String(Number(s[1]) + 2);
+                }
+                for(let i = 2; i<s.length;i++){
+                    if(s[i] == "P" || s[i] == "M"){
+                        continue;
+                    }
+                    time+=s[i];
+                }
+            } else{
+                if(s[1] == "2" && s[0] == "1"){
+                    time += String(Number(s[0]) - 1);
+                    time += String(Number(s[1]) - 2);
+                } else{
+                    time += s[0];
+                    time += s[1];
+                }
+                for(let i = 2; i<s.length;i++){
+                    if(s[i] == "M" || s[i] == "A"){
+                        continue;
+                    }
+                    time+=s[i];
+            }
+        }
+        return time;
+    }
+        console.log(timeConversion("02:34:50PM"));
+    </script>
+</body>
+</html>
