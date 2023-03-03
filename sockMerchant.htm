@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sock Merchant</title>
+</head>
+<body>
+    <script>
+        function sockMerchant(n, ar) {
+            let pairs = 0;
+            for(let i = 0, j = i + 1; i < ar.length;j++){
+                if(ar[i] == 0){
+                    i++;
+                    j = i;
+                } else{
+                    if(ar[i] == ar[j]){
+                        ar[i] = 0;
+                        ar[j] = 0;
+                        pairs++;
+                        i++;
+                        j = i;
+                    }
+                    if(j >= ar.length){
+                        i++;
+                        j = i;
+                    }
+                }
+
+            }
+        return pairs;
+    }
+
+        console.log(sockMerchant(undefined,[1,2,1,2,1,3,2]));
+        console.log(sockMerchant(undefined,[10,20,20,10,10,30,50,10,20]));
+        console.log(sockMerchant(undefined,[1,1,3,1,2,1,3,3,3,3]));
+        console.log(sockMerchant(undefined,[6,5,2,3,5,2,2,1,1,5,1,3,3,3,5]));
+    </script>
+</body>
+</html>
