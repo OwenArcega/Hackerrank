@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Book</title>
+</head>
+<body>
+    <script>
+        function pageCount(n, p) {
+            let jumpsStart = 0;
+            let jumpsEnd = 0;
+            let count = 0;
+            if(n % 2 == 0){
+                n++;
+            }
+            for(let i = 0, j = n; i < n; i += 2, j -= 2){
+                if(i == p || i + 1 == p){
+                    jumpsStart = count;
+                }
+                
+                if(j == p || j - 1 == p){
+                    jumpsEnd = count;
+                }
+                count++;
+            } 
+
+            if(jumpsStart > jumpsEnd){
+                return jumpsEnd;
+            } else{
+                return jumpsStart;
+            }
+        }
+
+        console.log(pageCount(6,5));
+    </script>
+</body>
+</html>
